@@ -1,0 +1,10 @@
+subjects:
+  subject1: 21
+  subject2: 21
+  subject3: 19
+  subject4: 18
+  subject5: 28
+  subject6: 21
+  # subject7: 20
+
+experiments: [control, music]
