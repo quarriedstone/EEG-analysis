@@ -9,10 +9,10 @@ from scipy.signal import stft
 import pickle
 from pathlib import Path
 
-from utils import IAF, ERD, CONFIG, electrodes, WAVES, remove_outliers
+from ..utils import IAF, ERD, CONFIG, electrodes, WAVES, remove_outliers
 
-load_dir = Path(__file__).parent.parent / "data"
-obg_dir = Path(__file__).parent.parent / "obj_dumps"
+load_dir = Path(__file__).parent.parent.parent / "data"
+obg_dir = Path(__file__).parent.parent.parent / "obj_dumps"
 
 for subject in list(CONFIG["subjects"]):
     (obg_dir / subject).mkdir(parents=True, exist_ok=True)
