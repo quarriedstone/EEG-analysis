@@ -3,6 +3,12 @@ subjects:
   subject2: 21
   subject3: 19
   subject4: 18
-  # subject7: 20
+  subject5: 21
+  subject6: 21
+  subject7: 19
+  subject8: 18
+  subject9: 21
+  subject10: 21
+
 
 experiments: [Control, Music]

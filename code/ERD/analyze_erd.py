@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-from ..utils import WAVES
+from code.utils import WAVES
 
 obg_dir = Path(__file__).parent.parent.parent / "obj_dumps"
 dirs = [e for e in obg_dir.iterdir() if e.is_dir()]

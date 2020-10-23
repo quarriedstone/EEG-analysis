@@ -6,7 +6,6 @@
 import yaml
 import numpy as np
 
-
 # Function to calculate IAF
 from mne.io import RawArray
 
@@ -29,6 +28,8 @@ CONFIG = yaml.load(open("subjects.yaml", "r"))
 
 WAVES = ["L1A", "L2A", "UA", "Th"]
 
+ARVAL = ["arousal", "valence"]
+
 
 def remove_outliers(erd):
     quant25 = np.quantile(erd, 0.25)
@@ -38,8 +39,9 @@ def remove_outliers(erd):
 
 
 def calculate_arousal(alpha: RawArray, beta: RawArray):
-    arousal = np.sum(beta.get_data(), axis=0) / np.sum(alpha.get_data(), axis=0)
-    # valence = aF4 - aF3
-    valence = alpha.get_data()[2] - alpha.get_data()[1]
+    return np.sum(np.power(beta.get_data(), 2), axis=0) / np.sum(np.power(alpha.get_data(), 2), axis=0)
 
-    return arousal, valence
+
+def calculate_valence(alpha: RawArray):
+    # valence = aF4 - aF3
+    return np.power(alpha.get_data()[2], 2) - np.power(alpha.get_data()[1], 2)
